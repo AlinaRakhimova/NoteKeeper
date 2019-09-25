@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NoteKeeper</string>
+    <string name="theme_example">Note 1</string>
+    <string name="data_example">13.09.2019</string>
 </resources>
