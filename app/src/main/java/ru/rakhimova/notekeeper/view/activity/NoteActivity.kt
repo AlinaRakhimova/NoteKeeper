@@ -69,20 +69,23 @@ class NoteActivity : AppCompatActivity() {
         if (note != null) {
             et_title.setText(note!!.title)
             et_body.setText(note!!.text)
-
-            val color = when (note!!.color) {
-                Note.Color.WHITE -> R.color.white
-                Note.Color.YELLOW -> R.color.yellow
-                Note.Color.GREEN -> R.color.green
-                Note.Color.BLUE -> R.color.blue
-                Note.Color.RED -> R.color.red
-                Note.Color.VIOLET -> R.color.violet
-                Note.Color.PINK -> R.color.pink
-            }
+            val color = initColor()
             toolbar.setBackgroundColor(ContextCompat.getColor(this, color))
         }
         et_title.addTextChangedListener(textChangeListener)
         et_body.addTextChangedListener(textChangeListener)
+    }
+
+    private fun initColor(): Int {
+        return when (note!!.color) {
+            Note.Color.WHITE -> R.color.white
+            Note.Color.YELLOW -> R.color.yellow
+            Note.Color.GREEN -> R.color.green
+            Note.Color.BLUE -> R.color.blue
+            Note.Color.RED -> R.color.red
+            Note.Color.VIOLET -> R.color.violet
+            Note.Color.PINK -> R.color.pink
+        }
     }
 
     private fun saveNote() {
@@ -94,7 +97,6 @@ class NoteActivity : AppCompatActivity() {
                     text = et_body.text.toString(),
                     lastChanged = Date()
             ) ?: createNewNote()
-
             if (note != null) viewModel.save(note!!)
         }, SAVE_DELAY)
     }
