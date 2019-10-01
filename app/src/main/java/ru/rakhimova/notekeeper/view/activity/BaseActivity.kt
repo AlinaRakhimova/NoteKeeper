@@ -4,8 +4,8 @@ import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import ru.rakhimova.notekeeper.BaseViewModel
-import ru.rakhimova.notekeeper.BaseViewState
+import ru.rakhimova.notekeeper.viewModel.BaseViewModel
+import ru.rakhimova.notekeeper.viewModel.BaseViewState
 
 abstract class BaseActivity<T, S : BaseViewState<T>> : AppCompatActivity() {
 

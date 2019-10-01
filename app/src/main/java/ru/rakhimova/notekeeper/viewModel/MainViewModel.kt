@@ -2,7 +2,6 @@ package ru.rakhimova.notekeeper.viewModel
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.Observer
-import ru.rakhimova.notekeeper.BaseViewModel
 import ru.rakhimova.notekeeper.data.NotesRepository
 import ru.rakhimova.notekeeper.data.entity.Note
 import ru.rakhimova.notekeeper.data.model.NoteResult
@@ -11,7 +10,6 @@ class MainViewModel : BaseViewModel<List<Note>?, MainViewState>() {
 
     private val notesObserver = Observer<NoteResult> {
         if (it == null) return@Observer
-
         when (it) {
             is NoteResult.Success<*> -> {
                 viewStateLiveData.value = MainViewState(notes = it.data as? List<Note>)

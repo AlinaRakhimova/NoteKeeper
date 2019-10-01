@@ -1,7 +1,6 @@
 package ru.rakhimova.notekeeper.viewModel
 
 import android.arch.lifecycle.Observer
-import ru.rakhimova.notekeeper.BaseViewModel
 import ru.rakhimova.notekeeper.data.NotesRepository
 import ru.rakhimova.notekeeper.data.entity.Note
 import ru.rakhimova.notekeeper.data.model.NoteResult

@@ -1,4 +1,4 @@
-package ru.rakhimova.notekeeper
+package ru.rakhimova.notekeeper.viewModel
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
